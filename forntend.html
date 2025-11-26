@@ -1,0 +1,115 @@
+<!--Design and develop a website using toggleable or dynamic tabs or pills with bootstrap and JQuery to show the relevance of EDI, DT and Course projects in VIT.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VIT Projects - EDI, DT & Course</title>
+  
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+  <style>
+    body {
+      background-color: #f9fafb;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .nav-pills .nav-link.active {
+      background-color: #0d6efd;
+      color: #fff;
+    }
+    .tab-content {
+      margin-top: 20px;
+    }
+    .card {
+      border-radius: 15px;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+  <div class="container py-5">
+    <h2 class="text-center mb-4">Relevance of Projects at VIT</h2>
+    
+    <!-- Nav Pills -->
+    <ul class="nav nav-pills justify-content-center mb-3" id="projectTabs" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="edi-tab" data-bs-toggle="pill" data-bs-target="#edi" type="button" role="tab">
+          EDI (Engineering Design & Innovation)
+        </button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="dt-tab" data-bs-toggle="pill" data-bs-target="#dt" type="button" role="tab">
+          DT (Design Thinking)
+        </button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="course-tab" data-bs-toggle="pill" data-bs-target="#course" type="button" role="tab">
+          Course Projects
+        </button>
+      </li>
+    </ul>
+
+    <!-- Tab Content -->
+    <div class="tab-content" id="projectTabsContent">
+      <!-- EDI -->
+      <div class="tab-pane fade show active" id="edi" role="tabpanel">
+        <div class="card p-4">
+          <h4>Engineering Design & Innovation (EDI)</h4>
+          <p>EDI projects at VIT encourage students to apply engineering fundamentals to solve real-world problems. 
+             They emphasize innovation, teamwork, and creativity while providing hands-on exposure to design and prototyping.</p>
+          <ul>
+            <li>Fosters innovation-driven mindset</li>
+            <li>Hands-on learning with prototypes</li>
+            <li>Promotes interdisciplinary collaboration</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- DT -->
+      <div class="tab-pane fade" id="dt" role="tabpanel">
+        <div class="card p-4">
+          <h4>Design Thinking (DT)</h4>
+          <p>DT projects focus on human-centric design and problem-solving frameworks. 
+             Students learn to empathize with users, define problems, ideate, prototype, and test solutions systematically.</p>
+          <ul>
+            <li>Encourages empathy-based innovation</li>
+            <li>Improves problem-solving skills</li>
+            <li>Structured methodology for real-world issues</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Course Projects -->
+      <div class="tab-pane fade" id="course" role="tabpanel">
+        <div class="card p-4">
+          <h4>Course Projects</h4>
+          <p>Course projects are embedded in the curriculum and allow students to apply theoretical concepts in practical scenarios. 
+             They strengthen academic learning while preparing students for research and industry-level projects.</p>
+          <ul>
+            <li>Application of classroom learning</li>
+            <li>Boosts technical and research skills</li>
+            <li>Enhances employability and career readiness</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- jQuery Animation (optional for smooth tab switch) -->
+  <script>
+    $(document).ready(function(){
+      $('#projectTabs button').on('click', function(){
+        $('.tab-pane').hide().removeClass('show active');
+        $($(this).data('bs-target')).fadeIn(400).addClass('show active');
+      });
+    });
+  </script>
+</body>
+</html>
